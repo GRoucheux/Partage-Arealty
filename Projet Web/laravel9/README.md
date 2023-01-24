@@ -6,11 +6,6 @@
    JavaScript. La partie Backend est développée en PHP. Le principe est que chaque utilisateur eregistré peut poster des posts,
    en commenter ou en liker. 
 
-### Etat d'avancement au 05/12/2022:
-
- Le projet est encore en cours de developpement. les pages principales sont en voie de finition, l'interface avec l'API
-  est quasi completement fonctionnelle.
-
  ### Environnement de developpement:
 
   Ce projet peut être utilisé dans des environnements divers, étant une interface web, il est utilisable sous tout systeme 
