@@ -1,0 +1,61 @@
+[33mcommit 37e8a2bce4222678818c3dfde916a8e60094ed3b[m[33m ([m[1;36mHEAD -> [m[1;32mdev[m[33m)[m
+Merge: 6c28445 ebaa276
+Author: Alebus7 <alexandre.dubus@epitech.eu>
+Date:   Wed Nov 30 11:43:19 2022 +0100
+
+    Merge branch 'home_view' of github.com:EpitechCodingAcademyPromo2023/C-DEV-160-PAR-1-1-yowl-guillaume.roucheux into dev
+
+[33mcommit ebaa2766f7fd59351ad485c30b1d2863a1669490[m[33m ([m[1;31morigin/home_view[m[33m, [m[1;32mhome_view[m[33m)[m
+Author: Alebus7 <alexandre.dubus@epitech.eu>
+Date:   Wed Nov 30 11:37:06 2022 +0100
+
+    CREATE: home view and post comonent.
+
+[33mcommit 6c284455070282bf3351b77925896b1b84035c8a[m[33m ([m[1;31morigin/dev[m[33m, [m[1;32mcomment_component[m[33m)[m
+Merge: a4176d6 954d030
+Author: guillaume <guillaume.roucheux@epitech.eu>
+Date:   Tue Nov 29 14:50:51 2022 +0100
+
+    [merge] branch BDD
+
+[33mcommit 954d03073b38de073075df07814864c3f511158f[m
+Author: guillaume <guillaume.roucheux@epitech.eu>
+Date:   Tue Nov 29 14:32:56 2022 +0100
+
+    [add] migration
+
+[33mcommit a4176d66f6fae9ef94b9c70dc521841423a26d63[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/button[m[33m, [m[1;32mmaster[m[33m, [m[1;32mbutton[m[33m)[m
+Author: Alebus7 <alexandre.dubus@epitech.eu>
+Date:   Tue Nov 29 14:26:01 2022 +0100
+
+    CREATE: button component.
+
+[33mcommit e5e4fc33a835fad7c6642a461a2848ee97e325cc[m
+Author: guillaume <guillaume.roucheux@epitech.eu>
+Date:   Tue Nov 29 12:57:43 2022 +0100
+
+    [add] model comments
+
+[33mcommit 439e582f21acee6363d77c61609b8e6c4f48a11f[m
+Author: guillaume <guillaume.roucheux@epitech.eu>
+Date:   Tue Nov 29 12:51:25 2022 +0100
+
+    [add] model Posts [mod] model User: add like
+
+[33mcommit fd46fd717692f0448aa2eaa414b879a23ab74cd6[m
+Author: guillaume <guillaume.roucheux@epitech.eu>
+Date:   Tue Nov 29 12:20:07 2022 +0100
+
+    [add] resource class user + user class model
+
+[33mcommit 23bd9840daef78ae69357725df7a7b6f0a51debe[m
+Author: Alebus7 <alexandre.dubus@epitech.eu>
+Date:   Tue Nov 29 11:23:04 2022 +0100
+
+    Repeat.
+
+[33mcommit d266462c9a0603758cd7a278b093417946e208fd[m
+Author: Alebus7 <alexandre.dubus@epitech.eu>
+Date:   Tue Nov 29 11:18:05 2022 +0100
+
+    First push.

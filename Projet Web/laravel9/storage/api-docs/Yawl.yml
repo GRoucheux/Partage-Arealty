@@ -1,0 +1,560 @@
+openapi: '3.0.2'
+info:
+  title: YOWL API Documentation
+  description: This is the YAWL API, using to store users, posts and comments from the YAWL website. 
+  version: '1.0'
+servers:
+  - url: http://localhost:8000/api/
+paths:
+  /register:
+    post:
+      tags:
+        - "Users"
+      requestBody: 
+        description: Create a new user
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                name:
+                  type: string
+                lastname:
+                  type: string
+                email:
+                  type: string
+                password:
+                  type: string
+                admin:
+                  type: integer
+            example:
+              username: bebert10
+              name: Albert
+              lastname: Ledoux
+              email: bebert@ledoux.fr
+              password: motDePasseCompliqué
+              admin: 0
+      responses:
+        '200':
+          description: OK
+
+        '404':
+          description: echec
+
+  /delUser:
+    post:
+      tags:
+        - "Users"
+      requestBody: 
+        description: Create a new user
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+              example: 
+                username: bebert10
+        required: true
+      responses:
+        '200':
+          description: Success
+        '404':
+          description: Not Found
+  /seeAll:
+    get:
+      tags:
+        - "Users"
+      summary:  Show all users in database
+      responses:
+        '200':
+          description: Success
+        '404':
+          description: Not Found
+  /verifyUserExist:
+    post:
+      tags:
+        - "Users"
+      requestBody: 
+        description: Verify if user is existing in database
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+              example: 
+                username: stratos3000
+        required: true
+      responses:
+        '200':
+          description: Success
+        '404':
+          description: Not Found
+  /modifyUser:
+    post:
+      tags:
+        - "Users"
+      requestBody: 
+        description: Modify an user in database, email or password. Set "choix" with email or password to modify password or email. If set with "password", put a password in "modify" and an email if set with "email".
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                choix: 
+                  type: string
+                modify:
+                  type: string
+                
+              example: 
+                username: stratos3000
+                choix: password
+                modify: passwordTresLong
+        required: true
+      responses:
+        '200':
+          description: Success
+        '404':
+          description: Not Found    
+  /verifyUser:
+    post:
+      tags:
+        - "Users"
+      requestBody: 
+        description: Verify user identity with username and password
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                password:
+                  type: string
+                
+              example: 
+                username: stratos3000
+                password: userPassword
+        required: true
+      responses:
+        '200':
+          description: Success
+        '404':
+          description: Not Found
+  /showOneUser:
+    post:
+      tags:
+        - "Users"
+      requestBody: 
+        description: Get one user per username
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                
+              example: 
+                username: stratos3000
+        required: true
+      responses:
+        '200':
+          description: Success
+        '404':
+          description: Not Found
+
+  /createPost:
+    post:
+      tags:
+        - "Posts"
+      requestBody: 
+        description: Create a new post
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                content:
+                  type: string
+                author:
+                  type: string
+            
+            example:
+              title: Les histoires de la 7
+              content: Tout plein de trucs à raconter dans une looongue phrase
+              author: noisettes48
+        required: true
+      responses:
+        '200':
+          description: OK
+
+        '404':
+          description: echec
+  /deletePost:
+    post:
+      tags:
+        - "Posts"
+      requestBody: 
+        description: delete a post
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: integer
+            
+            example:
+              id: 2
+        required: true
+      responses:
+        '200':
+          description: OK
+
+        '404':
+          description: echec
+  
+  /modifyPost:
+    post:
+      tags:
+        - "Posts"
+      requestBody: 
+        description: Modify a post in database, title or content. Set "choix" with title or content to modify title or content. If set with "title", put a title in "modify" and a content if set with "".
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                choix:
+                  type: string
+                modify:
+                  type: string
+                id: 
+                  type: integer
+            
+            example:
+              id: 2
+        required: true
+      responses:
+        '200':
+          description: OK
+
+        '404':
+          description: echec
+
+  /seeAllPosts:
+    get:
+      tags:
+        - "Posts"
+      requestBody: 
+        description: Show all posts in database
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: OK
+
+        '404':
+          description: echec
+  /seePost:
+    post:
+      tags:
+        - "Posts"
+      requestBody: 
+        description: Select and show one post by id
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id: 
+                  type: integer
+            
+            example:
+              id: 2
+        required: true
+      responses:
+        '200':
+          description: OK
+
+        '404':
+          description: echec
+  /showByAuthor:
+    post:
+      tags:
+        - "Posts"
+      requestBody: 
+        description: Select and show all posts by author
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                author :
+                  type: string
+            
+            example:
+              author: felix01
+        required: true
+      responses:
+        '200':
+          description: OK
+
+        '404':
+          description: echec
+  /CreateCom:
+    post:
+      tags:
+        - "Comments"
+      requestBody: 
+        description: Create a comment for a post. Author is a username from database
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                content:
+                  type: string
+                author:
+                  type: string
+                idPost:
+                  type: string
+            
+            example:
+              content: c'est super mais on s'en fiche
+              author: felix01
+              idPost: 1
+        required: true
+      responses:
+        '200':
+          description: OK
+
+        '404':
+          description: echec
+  /deleteCom:
+    post:
+      tags:
+        - "Comments"
+      requestBody: 
+        description: delete a comment from database by id
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+               id: 
+                type: string
+            
+            example:
+              idPost: 1
+        required: true
+      responses:
+        '200':
+          description: OK
+
+        '404':
+          description: echec
+  /modifyCom:
+    post:
+      tags:
+        - "Comments"
+      requestBody: 
+        description: Modify a com by id. Use the "modify" variable to put a new com.
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                modify:
+                  type: string
+                id: 
+                  type: integer
+            
+            example:
+              id: 2
+              modify: nouveau commentaire
+        required: true
+      responses:
+        '200':
+          description: OK
+
+        '404':
+          description: echec
+  /seeAllCom:
+    get:
+      tags:
+        - "Comments"
+      requestBody: 
+        description: Show all comments in database. Return a JSON with all coms.
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: OK
+
+        '404':
+          description: echec
+  /seeCom:
+    post:
+      tags:
+        - "Comments"
+      requestBody: 
+        description: Select and show one com by id
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id: 
+                  type: integer
+            
+            example:
+              id: 2
+        required: true
+      responses:
+        '200':
+          description: OK
+
+        '404':
+          description: echec
+  /likePost:
+    post:
+      tags:
+        - "Posts Likes"
+      requestBody: 
+        description: Create a like for a post. Author is a username from database
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+            
+            example:
+              username: totor26
+        required: true
+      responses:
+        '200':
+          description: OK
+
+        '404':
+          description: echec
+  /delLikePost:
+    post:
+      tags:
+        - "Posts Likes"
+      requestBody: 
+        description: del a like by id
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: integer
+            
+            example:
+              id :1 
+        required: true
+      responses:
+        '200':
+          description: OK
+
+        '404':
+          description: echec
+  /seeAllLikePost:
+    get:
+      tags:
+        - "Posts Likes"
+      requestBody: 
+        description: show all like posts. return a json.
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: OK
+
+        '404':
+          description: echec
+
+  /likeCom:
+    post:
+      tags:
+        - "Comments Likes"
+      requestBody: 
+        description: Create a like for a post. Author is a username from database
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+            
+            example:
+              username: totor26
+        required: true
+      responses:
+        '200':
+          description: OK
+
+        '404':
+          description: echec
+  /delLikeCom:
+    post:
+      tags:
+        - "Comments Likes"
+      requestBody: 
+        description: del a like by id
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: integer
+            
+            example:
+              id :1 
+        required: true
+      responses:
+        '200':
+          description: OK
+
+        '404':
+          description: echec
+  /seeAllLikeCom:
+    get:
+      tags:
+        - "Comments Likes"
+      requestBody: 
+        description: show all like comments. return a json.
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: OK
+
+        '404':
+          description: echec
+
+            
