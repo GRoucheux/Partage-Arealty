@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./script/script.js"></script>
+    <link rel="stylesheet" href="/node_modules/reveal.js/dist/reveal.css">
+    <link rel="stylesheet" href="/node_modules/reveal.js/dist/theme/black.css">
+    <title>Présentation</title>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section data-transition-speed="fast"><h1> Une démonstration de ce qui saute aux yeux </h1></section>
+            <section data-transition-speed="fast">
+               <p> Premier graph: Montre le nombre de commandes par heure</p>
+                <img heigh = 550 width = 550 src="plot1.png" alt=""></section>
+
+            <section><p class="fragment fade-in-then-out">On voit qu'il y a une tranche horaire tres clairement favorisée entre 10h et 15h</p>
+                <img heigh = 550 width = 550 src="plot1.png" alt=""></section>
+
+            <section><p>Le deuxieme graphe montre les zones les plus fréquentées </p>
+                <img heigh = 550 width = 550 src="plot3.png" alt=""></section>
+
+            <section> <p> A savoir les produits frais</p>
+                <img heigh = 550 width = 550 src="plot3.png" alt=""></section>
+
+            <section> <p>En troisieme point, les allées les plus fréquentées</p>
+                <img heigh = 550 width = 550 src="plot4.png" alt=""></section>
+
+            <section> <p>Les fruits frais</p>
+                <img heigh = 550 width = 550 src="plot4.png" alt=""></section>
+
+            <section> <p>La tendence est confirmée par ce dernier graphe</p>
+                <img heigh = 550 width = 550 src="plot2.png" alt=""></section>
+
+            <section><p>Qui represente le top 6 des commandes, ou on retrouve deux fruits frais</p>
+                <img heigh = 550 width = 550 src="plot2.png" alt=""></section>
+
+            <section><p> Ceci permet de conclure que les produits les plus commandés sont des produits frais, et que la majorité des commandes
+                se fait entre 10h et 15h. </p>
+            </section>
+
+            <section><p>On notera tout de même que le produit le plus commandé reste le lait en briques. </p></section>
+
+            <section><p>Annexe:</p></section>
+
+            <section><img src="allplots.png" alt=""></section>
+            
+            <section>Outils utilisés pour créer cette presentation:
+                <ul>
+                    <li>JupyterLab</li>
+                    <li>Pandas</li>
+                    <li>Bokeh</li>
+                    <li>reveal.js</li>
+                </ul>
+        </div>
+      </div>
+      <script src="/node_modules/reveal.js/dist/reveal.js"></script>
+      <script>
+        Reveal.initialize();
+      </script>
+</body>
+</html>
